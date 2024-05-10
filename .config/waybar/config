@@ -1,0 +1,118 @@
+{
+  "layer": "top",
+
+
+    "position": "top",
+    "margin-bottom": 0,
+
+
+    "modules-left": [
+      "custom/arch",
+      "clock",
+      "tray"
+      	],
+
+    "modules-center": [
+      "hyprland/workspaces",
+      	],
+
+    "modules-right": [
+      "network",
+      "temperature",
+      "memory",
+      "cpu",
+      "pulseaudio",
+      "custom/powermenu",
+    	],
+
+
+    "custom/arch": {
+      "format": "",
+      "on-click": "rofi -show drun",
+      "tooltip": false
+    },
+
+
+    "tray": {
+      "icon-size": 24,
+      "spacing": 10
+    },
+
+
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+        "active": "",
+        "default": ""
+      },
+	"persistent-workspaces": {
+	    "1": [],
+	    "2": [],
+	    "3": [],
+	    "4": [],
+            "5": [],
+            "6": [],
+	    "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+	}
+    },
+
+
+    "network": {
+      "format": "{ifname}",
+        "format-ethernet": "󰖩",
+        "format-disconnected": "󱘖",
+        "on-click": "nm-connection-editor",
+        "tooltip": false
+    },
+
+
+    "temperature": {
+      "format": "{icon} {temperatureC}°C",
+      "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+      "critical-threshold": 80,
+      "format-icons": ["", "", ""]
+    },
+
+
+    "memory": {
+      "format": "󰍛 {}%",
+      "tooltip": "false"
+    },
+
+
+    "cpu": {
+      "format": "  {usage}%",
+      "tooltip": "false"
+    },
+
+
+    "custom/powermenu": {
+      "format": "󰐥",
+      "tooltip": false,
+      "on-click": "exec wlogout -p layer-shell",
+    },
+
+
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": "󰟎",
+      "format-icons": {
+          "default": ["󰋋"]
+      },
+      "scroll-step": 1,
+      "on-click": "pavucontrol"
+    },
+
+
+    "clock": {
+      "format": "{:%H:%M}",
+      "interval": 60,
+      "tooltip": true,
+      "tooltip-format": "{:%B %d}"
+    }
+
+
+}
