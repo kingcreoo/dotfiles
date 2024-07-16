@@ -4,7 +4,7 @@ padding={x=15,y=15}
 
 [font]
 normal={family="FiraMonoNerd Font",style="Medium"}
-size=12.00
+size=14.00
 
 [colors.primary]
 foreground="#d8d8d8"
