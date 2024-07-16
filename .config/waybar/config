@@ -1,27 +1,27 @@
 {
-  "layer": "top",
-
-
+    // "layer": "top",
+    "height": 20,
     "position": "top",
     "margin-bottom": 0,
-
+    "spacing": 10,	
 
     "modules-left": [
-      "custom/arch",
       "clock",
+      "hyprland/workspaces",
       "tray"
       	],
 
     "modules-center": [
-      "hyprland/workspaces",
+      
       	],
 
     "modules-right": [
-      "network",
-      "temperature",
       "memory",
       "cpu",
+      "temperature",
+      "battery",
       "pulseaudio",
+      "network",
       "custom/powermenu",
     	],
 
@@ -62,7 +62,8 @@
 
     "network": {
       "format": "{ifname}",
-        "format-ethernet": "󰖩",
+	"format-wifi": "󰖩",
+        "format-ethernet": "󰈀",
         "format-disconnected": "󱘖",
         "on-click": "nm-connection-editor",
         "tooltip": false
@@ -70,8 +71,8 @@
 
 
     "temperature": {
-      "format": "{icon} {temperatureC}°C",
-      "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+      "format": "{icon} {temperatureC}°",
+      "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
       "critical-threshold": 80,
       "format-icons": ["", "", ""]
     },
@@ -86,6 +87,30 @@
     "cpu": {
       "format": "  {usage}%",
       "tooltip": "false"
+    },
+
+    "battery": {
+	"interval": 30,
+
+	"states": {
+	    "warning": 25,
+            "critical": 10
+	},
+
+	"format": "{icon} {capacity}%",
+
+	"format-charging": "󰂄 {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-warning": "<span color'yellow'>󰁼</span> {capacity}%",
+        "format-critical": "<span color='red'>󰁼</span> {capacity}%",
+
+	"format-icons": [
+     	 "󰂎",
+      	 "󰁼",
+      	 "󰁿",
+      	 "󰂁",
+      	 "󰁹"
+    	]
     },
 
 
