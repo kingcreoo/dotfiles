@@ -12,10 +12,10 @@
       	],
 
     "modules-center": [
-      
       	],
 
     "modules-right": [
+      "custom/crypto",
       "memory",
       "cpu",
       "temperature",
@@ -31,7 +31,6 @@
       "on-click": "rofi -show drun",
       "tooltip": false
     },
-
 
     "tray": {
       "icon-size": 24,
@@ -137,7 +136,12 @@
       "interval": 60,
       "tooltip": true,
       "tooltip-format": "{:%B %d}"
+    },
+
+    "custom/crypto": {
+	"format": "{}",
+	"return-type": "json",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/crypto_prices.sh"
     }
-
-
 }
