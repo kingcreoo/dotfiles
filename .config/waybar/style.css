@@ -1,0 +1,57 @@
+* {
+}
+
+#waybar {
+  background: #1a1a1a;
+  color: #ffffff;
+  opacity: 1;
+  font-size: 20px;
+  font-family: "JetBrainsMono";
+}
+
+#clock {
+	margin-left: 10px
+}
+
+#workspaces {
+	margin-right: 10px;
+	font-size: 24px;
+}
+
+#workspaces button {
+	color: #ffffff;
+	background: transparent;
+}
+
+#network {
+	margin-right: 15px;
+}
+
+#memory {
+	margin-right: 10px;
+}
+
+#cpu {
+        margin-right: 10px;
+}
+
+#temperature {
+        margin-right: 10px;
+}
+
+#battery {
+        margin-right: 10px;
+}
+
+The new document of pyquery module shows the method below will no longer fetch the contents of the URL.#pulseaudio {
+        margin-right: 10px;
+}
+
+#custom-powermenu {
+	margin-right: 20px;
+}
+
+#custom-crypto {
+	padding: 0 10px;
+        color: #f0f0f0;
+}

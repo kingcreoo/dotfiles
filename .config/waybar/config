@@ -1,0 +1,166 @@
+{
+    // "layer": "top",
+    "height": 20,
+    "position": "top",
+    "margin-bottom": 0,
+    "spacing": 10,	
+
+    "modules-left": [
+      "clock",
+      "hyprland/workspaces",
+      "tray"
+      	],
+
+    "modules-center": [
+      	],
+
+    "modules-right": [
+      "custom/crypto",
+      "memory",
+      "cpu",
+      "temperature",
+      "battery",
+      "pulseaudio",
+      "network",
+      "custom/powermenu",
+    	],
+
+
+    "custom/arch": {
+      "format": "",
+      "on-click": "rofi -show drun",
+      "tooltip": false
+    },
+
+    "tray": {
+      "icon-size": 24,
+      "spacing": 10
+    },
+
+
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+        "active": "󱓻",
+        "default": "󱓼"
+      },
+	    "persistent-workspaces": {
+	    "1": [],
+	    "2": [],
+	    "3": [],
+	    "4": [],
+      "5": [],
+      "6": [],
+	    "7": []
+	    }
+    },
+
+
+    "network": {
+      "format": "{ifname}",
+	    "format-wifi": "󰖩",
+      "format-ethernet": "󰈀",
+      "format-disconnected": "󱘖",
+      "on-click": "nm-connection-editor",
+      "tooltip": false
+    },
+
+
+    "temperature": {
+      "format": "{icon} {temperatureC}°",
+      "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+      "critical-threshold": 80,
+      "format-critical": "<span color='red'>{icon} {temperatureC}°</span>",
+      "format-icons": [
+        "<span color='white'></span>",
+        "<span color='white'></span>", 
+        "<span color='white'></span>", 
+        "<span color='orange'></span>"     
+      ]
+    },
+
+
+    "memory": {
+      "format": "󰍛 {}%",
+      "states": {
+        "warning": 60,
+        "high": 70,
+        "critical": 90
+      },
+      "format-warning": "<span color='white'>󰍛 {}%</span>",
+      "format-high": "<span color='orange'>󰍛 {}%</span>",
+      "format-critical": "<span color='red'>󰍛 {}%</span>",
+	    "tooltip": "false"
+	  },
+
+
+    "cpu": {
+      "format": " {usage}%",
+      "states": {
+        "warning": 60,
+        "high": 70,
+        "critical": 90
+      },
+      "format-warning": "<span color='white'> {usage}%</span>",
+      "format-high": "<span color='orange'> {usage}%</span>",
+      "format-critical": "<span color='red'> {usage}%</span>",
+      "tooltip": "false"
+    },
+
+    "battery": {
+	"interval": 30,
+
+	"states": {
+	    "warning": 25,
+            "critical": 10
+	},
+
+	"format": "{icon} {capacity}%",
+
+	"format-charging": "󱟦 {capacity}%",
+        "format-plugged": "󱟢 {capacity}%",
+        "format-warning": "<span color='orange'>󰁼</span> {capacity}%",
+        "format-critical": "<span color='red'>󰁼</span> {capacity}%",
+
+	"format-icons": [
+     	 "󰂎",
+      	 "󰁼",
+      	 "󰁿",
+      	 "󰂁",
+      	 "󰁹"
+    	]
+    },
+
+
+    "custom/powermenu": {
+      "format": "󰐥",
+      "tooltip": false,
+      "on-click": "exec wlogout -p layer-shell",
+    },
+
+
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": "󰟎",
+      "format-icons": {
+          "default": ["󰋋"]
+      },
+      "scroll-step": 1,
+      "on-click": "pavucontrol"
+    },
+
+
+    "clock": {
+      "format": "{:%H:%M}",
+      "interval": 60,
+      "tooltip": true,
+      "tooltip-format": "{:%B %d}"
+    },
+
+    "custom/crypto": {
+	"format": "{}",
+	"return-type": "json",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/crypto_prices.sh"
+    }
+}

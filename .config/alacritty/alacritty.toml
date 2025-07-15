@@ -1,0 +1,10 @@
+[window]
+opacity=0.82
+padding={x=15,y=15}
+
+[font]
+normal={family="JetBrainsMono"}
+size=14.00
+
+[colors.primary]
+foreground="#d8d8d8"
